@@ -2,7 +2,7 @@
 // Allows us to reset the cookie for testing purposes.
 if(isset($_GET['reset'])){
 	setcookie ('resolution', '', time() - 3600, '/'); // Destroys cookie
-	header('Location: index.php?analysis');
+	header('Location: example.php?analysis');
 	exit;
 }
 
@@ -13,7 +13,7 @@ if(isset($_GET['analysis'])){
 	echo '<pre>';
 	var_dump($_COOKIE);
 	echo '</pre>';
-	echo '<a href="index.php">View site fresh</a>';
+	echo '<a href="example.php">View site fresh</a>';
 	exit;
 }
 
