@@ -21,18 +21,12 @@ if(isset($_GET['analysis'])){
 if(!isset($_COOKIE['resolution'])) {
 	?>
 	<script>
-	/* If we decide to use viewport in the future:
-	   from: http://andylangton.co.uk/articles/javascript/get-viewport-size-javascript/
-	var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
-	var screenwidth = Math.max(screen.width,screen.height); */
 	// Set cookie based on screen size (from adaptive-images)
 	document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';
 	location.reload(true);
 	</script>
 	<?php 
 // If user doesn't have JavaScript, they'll just keep moving past here like nothing happened.
-// ISSUE: since there's no php exit here, will the folks getting the reload up above pre-load any of the elements below?
-// Ran tests using Charles and when I showed up with a desktop browser, I didn't see any elements included in the mobile navigation loaded at all.
 }
 
 $res = !empty($_COOKIE['resolution']) ? $_COOKIE['resolution'] : 500; // Arbitrary mobile resolution.

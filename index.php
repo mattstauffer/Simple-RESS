@@ -3,7 +3,7 @@
 
 	// If user shows up and doesn't have a cookie set
 	if(!isset($_COOKIE['resolution'])) {
-		// Set cookie based on screen size (from adaptive-images.com)  
+	// Set cookie based on screen size (from adaptive-images.com)  
 ?>
 <script>
 document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';
